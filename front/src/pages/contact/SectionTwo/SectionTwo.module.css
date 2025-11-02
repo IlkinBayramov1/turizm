@@ -1,0 +1,93 @@
+/* ===============================
+   SectionTwo.module.css
+   Contact Info Section (Scoped)
+================================= */
+
+.contactInfo {
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactInfo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.tagline {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: var(--gray-light);
+}
+
+/* List Styling Scoped */
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.contactInfo li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.contactInfo .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  color: var(--white);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.contactInfo li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.contactInfo li p,
+.contactInfo li a {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  text-decoration: none;
+}
+
+.contactInfo li a:hover {
+  color: var(--accent-gold);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactInfo {
+    padding: 3rem 1rem;
+  }
+  .contactInfo li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

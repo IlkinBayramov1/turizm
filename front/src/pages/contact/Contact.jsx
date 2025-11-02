@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import SectionOne from "./SectionOne/SectionOne";
+import SectionTwo from "./SectionTwo/SectionTwo";
+import SectionThree from "./SectionThree/SectionThree";
+import SectionFour from "./SectionFour/SectionFour";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <div>Contact</div>
-  )
+    <>
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
+    </>
+  );
 }
-
-export default Contact

@@ -1,0 +1,31 @@
+/* ===============================
+   SectionOne Styles (Contact Hero)
+================================= */
+
+.hero {
+  background: var(--primary-gradient); /* premium gradient */
+  color: var(--white);
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.content {
+  max-width: 700px;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: var(--light);
+  line-height: 1.6;
+}

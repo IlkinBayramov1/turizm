@@ -1,0 +1,90 @@
+/* ===============================
+   Why Choose Us Section
+   Author: UI/UX Designer
+   Year: 2025
+================================= */
+
+.whyChooseUs {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.whyChooseUs h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.whyCard {
+  background: var(--dark-alt);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.whyCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.whyCard:hover::before {
+  opacity: 0.08;
+}
+
+.whyCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.icon {
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  position: relative;
+}
+
+.whyCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  z-index: 1;
+  position: relative;
+}
+
+.whyCard p {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whyGrid {
+    gap: 1.5rem;
+  }
+}

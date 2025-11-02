@@ -1,10 +1,10 @@
 import React from 'react'
-import HotelCard from '../../components/HotelCard/HotelCard'
+import TourCard from '../../components/TourCard/TourCard'
 
 const Tours = () => {
   return (
     <div>
-        <HotelCard/>
+        <TourCard/>
     </div>
   )
 }

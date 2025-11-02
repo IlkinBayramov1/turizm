@@ -1,13 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import styles from "./SectionThree.module.css";
+import tourImg from "../../../assets/tourpack.jpg";
 
 export default function SectionThree() {
   const tours = [
-    { id: 1, title: "Exciting Tour 1", img: "/images/tourpack.jpg" },
-    { id: 2, title: "Exciting Tour 2", img: "/images/tourpack.jpg" },
-    { id: 3, title: "Exciting Tour 3", img: "/images/tourpack.jpg" },
-    { id: 4, title: "Exciting Tour 4", img: "/images/tourpack.jpg" },
+    { id: 1, title: "Exciting Tour 1", img: tourImg },
+    { id: 2, title: "Exciting Tour 2", img: tourImg },
+    { id: 3, title: "Exciting Tour 3", img: tourImg },
+    { id: 4, title: "Exciting Tour 4", img: tourImg },
   ];
 
   const sliderSettings = {
@@ -26,7 +27,7 @@ export default function SectionThree() {
 
   return (
     <section className={styles.tours} id="tours">
-      <div className="container">
+      <div className={styles.container}>
         <h2>Recent Tours</h2>
         <Slider {...sliderSettings} className={styles.tourCarousel}>
           {tours.map((tour) => (
@@ -37,7 +38,7 @@ export default function SectionThree() {
                 <p>
                   A curated journey offering adventure, relaxation, and cultural immersion.
                 </p>
-                <a href="/tours/details" className="link">View Details →</a>
+                <a href="/tours/details" className={styles.link}>View Details →</a>
               </div>
             </article>
           ))}

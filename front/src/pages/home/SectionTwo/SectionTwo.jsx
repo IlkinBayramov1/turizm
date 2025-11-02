@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./SectionTwo.module.css";
+import aboutImage from "../../../assets/about-overview.webp"; // şəkli import edirik
 
 export default function SectionTwo() {
   return (
@@ -7,7 +8,7 @@ export default function SectionTwo() {
       <div className={styles.container}>
         <div className={styles.aboutImage}>
           <img
-            src="/images/about-overview.webp"
+            src={aboutImage} // import edilmiş şəkil burada istifadə olunur
             alt="Travelers exploring scenic landscapes"
             loading="lazy"
           />

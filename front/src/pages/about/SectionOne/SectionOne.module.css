@@ -1,0 +1,47 @@
+/* ===============================
+   Section One (Hero) Styles
+   Author: UI/UX Designer
+   Year: 2025
+================================= */
+
+.hero {
+  background: var(--primary-gradient);
+  color: var(--white);
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.noImage .content {
+  max-width: 800px;
+  margin: auto;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.noImage h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.noImage p {
+  font-size: 1.2rem;
+  color: var(--light);
+  line-height: 1.7;
+}
+
+/* Simple fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,97 @@
+/* ===============================
+   Testimonials
+================================= */
+.testimonials {
+  padding: 5rem 0;
+  background: var(--dark-alt);
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Carousel container */
+.testimonialCarousel :global(.slick-slide) {
+  padding: 1rem;
+}
+
+/* Card styling */
+.testimonialCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+  transition: var(--transition);
+  height: 100%;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Header (avatar + name) */
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.testimonialCard h3 {
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.stars {
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-top: 0.25rem;
+}
+
+.testimonialCard p {
+  color: var(--gray-light);
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Dots customization (using :global for slick classes) */
+.testimonialCarousel :global(.slick-dots li button:before) {
+  color: var(--accent-gold);
+  font-size: 0.7rem;
+}
+
+.testimonialCarousel :global(.slick-dots li.slick-active button:before) {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials h2 {
+    font-size: 1.6rem;
+  }
+}

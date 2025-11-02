@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import styles from "./Booking.module.css";
 
-const Booking = () => {
+import SectionOne from "./SectionOne/SectionOne";
+import SectionTwo from "./SectionTwo/SectionTwo";
+import SectionThree from "./SectionThree/SectionThree";
+import SectionFour from "./SectionFour/SectionFour";
+
+export default function Booking() {
   return (
-    <div>Booking</div>
-  )
+    <div className={styles.bookingPage}>
+      <SectionOne />
+      <section className={styles.bookingContainer}>
+        <div className={styles.bookingGrid}>
+          <SectionTwo />
+          <SectionThree />
+        </div>
+      </section>
+      <SectionFour />
+    </div>
+  );
 }
-
-export default Booking

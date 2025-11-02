@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./SectionOne.module.css";
+import image from "../../../assets/tourism-banner.webp";
 
 export default function SectionOne() {
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: "url('/images/tourism-banner.webp')" }}
+      style={{ backgroundImage: `url(${image})` }} // import edilmiş şəkil burada istifadə olunur
       role="region"
       aria-label="Hero section"
     >
