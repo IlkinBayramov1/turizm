@@ -1,5 +1,6 @@
 import express from "express";
 import protect from "../middlewares/authMiddleware.js";
+import protectAdmin from "../middlewares/adminMiddleware.js"; // 🔸 Admin yoxlaması (əgər varsa)
 import {
   createReservation,
   getMyReservations,
@@ -10,19 +11,19 @@ import {
 
 const router = express.Router();
 
-// 🔹 Yeni rezervasiya
-router.post("/", createReservation);
+// 🔹 Yeni rezervasiya (login tələb olunur)
+router.post("/", protect, createReservation);
 
-// 🔹 İstifadəçinin öz rezervasiyaları (login tələb olunur)
+// 🔹 İstifadəçinin öz rezervasiyaları
 router.get("/my", protect, getMyReservations);
 
 // 🔹 Admin bütün rezervasiyaları görə bilir
-router.get("/", getAllReservations);
+router.get("/", protect, protectAdmin, getAllReservations);
 
-// 🔹 Rezervasiya statusunu dəyiş
-router.put("/:id/status", updateReservationStatus);
+// 🔹 Rezervasiya statusunu dəyişmək (yalnız admin)
+router.put("/:id/status", protect, protectAdmin, updateReservationStatus);
 
-// 🔹 Rezervasiyanı sil
+// 🔹 Rezervasiyanı sil (öz rezervasiyasını silə bilər, admin hamısını)
 router.delete("/:id", protect, deleteReservation);
 
 export default router;

@@ -1,17 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Navbar from "../components/Navbar/Navbar";
-import "./AdminLayout.css";
+import styles from "./AdminLayout.module.css"; // CSS Module istifadə etmək daha təhlükəsizdir
 
 export default function AdminLayout() {
   return (
-    <div className="admin-layout">
+    <div className={styles.adminLayout}>
       <Sidebar />
-      <div className="main-content">
+      <div className={styles.mainContent}>
         <Navbar />
-        <div className="page-content">
+        <main className={styles.pageContent}>
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );

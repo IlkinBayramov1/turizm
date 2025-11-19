@@ -4,6 +4,12 @@ import { AuthContext } from "../context/AuthContext";
 
 export default function ProtectedRoute({ children }) {
   const { admin } = useContext(AuthContext);
-  if (!admin) return <Navigate to="/login" />;
+
+  // Əgər admin login olmayıbsa login səhifəsinə yönləndir
+  if (!admin) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Əks halda qorunan komponentləri göstər
   return children;
 }

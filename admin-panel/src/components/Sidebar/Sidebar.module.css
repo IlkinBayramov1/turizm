@@ -1,33 +1,59 @@
+/* Sidebar.module.css */
 .sidebar {
-  width: 220px;
-  background: #1e1e2f;
+  width: 250px;
+  background-color: #1e1e2f;
   color: #fff;
-  height: 100vh;
   padding: 20px;
-  position: fixed;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: width 0.3s;
 }
 
-.sidebar .logo {
-  font-size: 20px;
-  font-weight: bold;
+.logo {
+  text-align: center;
   margin-bottom: 30px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.2s;
 }
 
-.sidebar nav ul {
+.logo:hover {
+  color: #ff4d4f;
+  cursor: default;
+}
+
+nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.sidebar nav ul li {
-  margin: 15px 0;
-}
-
-.sidebar nav ul li a {
+nav ul li a {
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
 }
 
-.sidebar nav ul li a.active {
+nav ul li a:hover {
+  background-color: #33334d;
+  transform: translateX(4px);
+}
+
+nav ul li a.active {
+  background-color: #ff4d4f;
   font-weight: bold;
-  color: #00bfff;
+}
+
+nav ul li a svg {
+  margin-right: 10px; /* ikonlar varsa */
 }

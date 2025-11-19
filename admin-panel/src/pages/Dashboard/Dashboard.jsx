@@ -4,22 +4,40 @@ import StatsCard from "../../components/StatsCard";
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    api.get("/admin/stats")
-      .then(res => setStats(res.data))
-      .catch(err => console.log(err));
+    const fetchStats = async () => {
+      try {
+        const res = await api.get("/admin/stats");
+        setStats(res.data);
+      } catch (err) {
+        console.error(err);
+        setError("Statistika yüklənmədi!");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchStats();
   }, []);
 
-  if (!stats) return <p>Loading stats...</p>;
+  if (loading) return <p>Loading stats...</p>;
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
+
+  const cards = [
+    { title: "Total Users", value: stats.totalUsers },
+    { title: "Total Reservations", value: stats.totalReservations },
+    { title: "Revenue", value: `$${stats.revenue}` },
+    { title: "Discounted Revenue", value: `$${stats.discountedRevenue}` },
+    { title: "Active Tours", value: stats.activeTours },
+  ];
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      <StatsCard title="Total Users" value={stats.totalUsers} />
-      <StatsCard title="Total Reservations" value={stats.totalReservations} />
-      <StatsCard title="Revenue" value={`$${stats.revenue}`} />
-      <StatsCard title="Discounted Revenue" value={`$${stats.discountedRevenue}`} />
-      <StatsCard title="Active Tours" value={stats.activeTours} />
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+      {cards.map((card, idx) => (
+        <StatsCard key={idx} title={card.title} value={card.value} />
+      ))}
     </div>
   );
 }

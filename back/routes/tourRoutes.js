@@ -1,6 +1,6 @@
 import express from "express";
 import Tour from "../models/Tour.js";
-import protect from "../middlewares/authMiddleware.js"; // admin üçün qoruma
+import protectAdmin from "../middlewares/adminMiddleware.js"; // admin üçün qoruma
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // 🔹 Create new tour (protected - admin)
-router.post("/", protect, async (req, res) => {
+router.post("/", protectAdmin, async (req, res) => {
   try {
     const tour = await Tour.create(req.body);
     res.status(201).json(tour);
@@ -36,7 +36,7 @@ router.post("/", protect, async (req, res) => {
 });
 
 // 🔹 Update tour (protected - admin)
-router.put("/:id", protect, async (req, res) => {
+router.put("/:id", protectAdmin, async (req, res) => {
   try {
     const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!tour) return res.status(404).json({ message: "Tour not found" });
@@ -47,7 +47,7 @@ router.put("/:id", protect, async (req, res) => {
 });
 
 // 🔹 Delete tour (protected - admin)
-router.delete("/:id", protect, async (req, res) => {
+router.delete("/:id", protectAdmin, async (req, res) => {
   try {
     const tour = await Tour.findByIdAndDelete(req.params.id);
     if (!tour) return res.status(404).json({ message: "Tour not found" });

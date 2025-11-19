@@ -1,14 +1,18 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const { admin, logout } = useContext(AuthContext);
 
   return (
-    <header className="navbar">
-      <h3>Welcome, {admin?.name}</h3>
-      <button onClick={logout}>Logout</button>
+    <header className={styles.navbar}>
+      <h3>
+        Welcome, {admin?.firstName ? `${admin.firstName} ${admin.lastName}` : "Admin"}
+      </h3>
+      <button className={styles.logoutBtn} onClick={logout}>
+        Logout
+      </button>
     </header>
   );
 }
