@@ -8,25 +8,34 @@
 h2 {
   margin-bottom: 20px;
   color: #111827;
+  font-size: 1.5rem;
 }
 
 .addForm {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
-.addForm input {
-  padding: 8px 12px;
+.addForm input,
+.addForm textarea,
+.addForm select {
+  padding: 10px 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  flex: 1;
+  flex: 1 1 200px;
   min-width: 150px;
+  font-size: 14px;
+}
+
+.addForm textarea {
+  resize: vertical;
+  min-height: 40px;
 }
 
 .addForm button {
-  padding: 8px 16px;
+  padding: 10px 16px;
   border: none;
   border-radius: 6px;
   background: #10b981;
@@ -35,30 +44,50 @@ h2 {
   display: flex;
   align-items: center;
   gap: 6px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.addForm button:hover {
+  opacity: 0.85;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  min-width: 700px;
 }
 
 th, td {
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
 }
 
 th {
   background-color: #f3f4f6;
   color: #374151;
+  font-weight: 600;
 }
 
-td input {
+td input,
+td select {
   padding: 6px 8px;
   border-radius: 4px;
   border: 1px solid #d1d5db;
   width: 100%;
+  font-size: 13px;
+}
+
+td textarea {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  padding: 6px 8px;
+  font-size: 13px;
+  resize: vertical;
 }
 
 button {
@@ -66,7 +95,9 @@ button {
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
-  margin-right: 4px;
+  margin: 4px 2px 4px 0;
+  font-size: 13px;
+  transition: 0.2s;
 }
 
 button.deleteBtn {
@@ -89,10 +120,8 @@ button.cancelBtn {
   color: #fff;
 }
 
-/* Hover effekti */
 button:hover {
   opacity: 0.85;
-  transition: 0.2s;
 }
 
 /* Responsive */
@@ -103,9 +132,21 @@ button:hover {
 
   .table {
     font-size: 14px;
+    min-width: 100%;
   }
 
   th, td {
     padding: 8px 10px;
+  }
+
+  td input,
+  td select,
+  td textarea {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 5px 8px;
   }
 }
